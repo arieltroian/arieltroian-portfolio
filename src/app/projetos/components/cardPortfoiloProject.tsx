@@ -41,7 +41,7 @@ const PortfolioCardComponent = () => {
         </ul>
 
         <div className="flex gap-3 mt-4 items-center">
-          <Link href="">
+          <Link href="https://github.com/arieltroian/arieltroian-portfolio">
             <Button variant="outline" size="default" className="flex gap-2">
               <Code2 /> Code
             </Button>
