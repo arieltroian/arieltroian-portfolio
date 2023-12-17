@@ -32,19 +32,23 @@ const navLinks = [
 
 let lastScrollTop = 0;
 
-window.addEventListener("scroll", () => {
-  const currentScrollTop = window.scrollY;
+if (typeof window !== "undefined") {
+  window.addEventListener("scroll", () => {
+    const currentScrollTop = window.scrollY;
 
-  if (currentScrollTop > lastScrollTop) {
-    document.getElementById("navbarscroll")?.classList.add("-translate-y-full");
-  } else {
-    document
-      .getElementById("navbarscroll")
-      ?.classList.remove("-translate-y-full");
-  }
+    if (currentScrollTop > lastScrollTop) {
+      document
+        .getElementById("navbarscroll")
+        ?.classList.add("-translate-y-full");
+    } else {
+      document
+        .getElementById("navbarscroll")
+        ?.classList.remove("-translate-y-full");
+    }
 
-  lastScrollTop = currentScrollTop;
-});
+    lastScrollTop = currentScrollTop;
+  });
+}
 
 const Navbar = () => {
   const [navbarOpen, setNavbarOpen] = useState(false);
@@ -111,16 +115,16 @@ const Navbar = () => {
 
       <div className="menu hidden md:block md:w-auto" id="navbar">
         <ul className="flex p-4 md:p-0 md:flex-row md:space-x-8 mt-0">
-          <Link href={"/"}>
+          <Link href="/">
             <li>Home</li>
           </Link>
-          <Link href={"#sobre"}>
+          <Link href="#sobre">
             <li>Sobre</li>
           </Link>
-          <Link href={"#projetos"}>
+          <Link href="#projetos">
             <li>Projetos</li>
           </Link>
-          <Link href={"#contato"}>
+          <Link href="#contato">
             <li>Contato</li>
           </Link>
         </ul>
